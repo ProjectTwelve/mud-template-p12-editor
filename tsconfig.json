@@ -1,0 +1,25 @@
+{
+	"compilerOptions":
+	{
+		"target": "ES2021",
+		"useDefineForClassFields": true,
+		"experimentalDecorators": true,
+		"moduleResolution": "Node",
+		"allowSyntheticDefaultImports": true,
+		"module": "ES2022",
+		"sourceMap": false,
+		"typeRoots": [
+			"../../../../../../WindowsNoEditor/MW/Content/Typing"
+		],
+		"lib": [
+			"ES2021"
+		],
+		"noEmit": true,
+		"esModuleInterop": true,
+		"strict": false
+	},
+	"include": [
+		"./**/*",
+		"node_modules/@latticexyz"
+	]
+}
