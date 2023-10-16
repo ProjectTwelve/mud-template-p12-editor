@@ -8,4 +8,5 @@ broadcast/
 # Ignore MUD deploy artifacts
 deploys/**/*.json
 abi
+codegen
 .env
