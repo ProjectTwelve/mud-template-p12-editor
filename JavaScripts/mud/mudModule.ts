@@ -1,13 +1,16 @@
-﻿import { setup } from "./setup";
+﻿import { ClientComponents } from "./createClientComponents";
+import { SystemCalls } from "./createSystemCalls";
+import { setup } from "./setup";
+import { SetupNetworkResult } from "./setupNetwork";
 
 // singleton
 export default class MudModule {
 
     private static instance;
 
-    public network;
-    public components;
-    public systemCalls;
+    public network: SetupNetworkResult;
+    public components: ClientComponents;
+    public systemCalls: SystemCalls;
 
     constructor() {
         if (MudModule.instance) {
