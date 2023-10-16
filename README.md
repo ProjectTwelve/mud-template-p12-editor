@@ -8,7 +8,8 @@ require:
 
 - windows 10
 - node = 16
-- pnpm = 8
+- [pnpm](https://pnpm.io/) = 8
+- [foundry](https://getfoundry.sh/)
 - p12 editor >= v0.27.0.0
 
 clone the repo
