@@ -1,5 +1,7 @@
 # MUD template with p12 editor
 
+![](./preview.gif)
+
 ## Get Start
 
 require:
