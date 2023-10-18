@@ -74,7 +74,7 @@ export async function setupNetwork() {
    * to the viem publicClient to make RPC calls to fetch MUD
    * events from the chain.
    */
-  const { components, latestBlock$,  waitForTransaction } = await syncToRecs({
+  const { components, latestBlock$, waitForTransaction } = await syncToRecs({
     world,
     config: mudConfig,
     address: networkConfig.worldAddress as Hex,

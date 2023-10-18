@@ -67,7 +67,7 @@ export async function getNetworkConfig() {
    * provide it as worldAddress in the query string.
    */
   const world = worlds[chain.id.toString()];
-  const worldAddress =  world?.address;
+  const worldAddress = world?.address;
   if (!worldAddress) {
     throw new Error(`No world address found for chain ${chainId}. Did you run \`mud deploy\`?`);
   }
@@ -83,7 +83,7 @@ export async function getNetworkConfig() {
     world?.blockNumber || 0n;
 
   return {
-    privateKey: "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80",
+    privateKey: "0x92db14e403b83dfe3df233f83dfa3a0d7096f21ca9b0d6d6b8d88b2b4ec1564e",
     chainId,
     chain,
     faucetServiceUrl: chain.faucetUrl,

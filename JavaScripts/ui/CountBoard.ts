@@ -11,19 +11,20 @@ export class CountBoard extends Board_Generate {
         let button = this.uiWidgetBase.findChildByPath("RootCanvas/StaleButton") as Button;
         let text = this.uiWidgetBase.findChildByPath("RootCanvas/Number") as TextBlock;
 
-        this.mudModule = new MudModule();
+        if (SystemUtil.isClient()) {
+            this.mudModule = new MudModule();
+
+            button.onPressed.add(() => {
+                console.log("clicked")
+                this.mudModule.systemCalls.increment().then((c) => { console.log("current count: ", c) }).catch(e => { console.log(e) })
+            })
 
 
-        button.onClicked.add(() => {
-            this.mudModule.systemCalls.increment();
-        })
-
-
-        setInterval(() => {
-            const { Counter } = this.mudModule.components;
-            const c = getComponentValue(Counter, "0x" as Entity)
-            console.log("current count: ", JSON.stringify(c))
-            text.text = String(Number(c.value))
-        }, 500)
+            setInterval(() => {
+                const { Counter } = this.mudModule.components;
+                const c = getComponentValue(Counter, "0x" as Entity)
+                text.text = String(Number(c?.value || 0))
+            }, 500)
+        }
     }
 }
