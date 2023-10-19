@@ -4,10 +4,17 @@ import MudModule from "../mud/mudModule";
 import Board_Generate from "../ui-generate/Board_generate";
 export class CountBoard extends Board_Generate {
     mudModule: MudModule;
-    /**
-     * UI 
-     */
+
+    // patch for temporary runtime bug
+    private initialized: boolean;
     public onStart() {
+
+        if (this.initialized) {
+            return
+        }
+        this.initialized = true;
+
+
         let button = this.uiWidgetBase.findChildByPath("RootCanvas/StaleButton") as Button;
         let text = this.uiWidgetBase.findChildByPath("RootCanvas/Number") as TextBlock;
 
