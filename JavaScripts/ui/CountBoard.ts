@@ -23,7 +23,7 @@ export class CountBoard extends Board_Generate {
 
             button.onPressed.add(() => {
                 console.log("clicked")
-                this.mudModule.systemCalls.increment().then((c) => { console.log("current count: ", c) }).catch(e => { console.log(e) })
+                this.mudModule.systemCalls.increment().catch(e => console.error)
             })
 
 
